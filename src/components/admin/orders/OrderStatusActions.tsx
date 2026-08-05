@@ -59,20 +59,21 @@ export default function OrderStatusActions({ order, onUpdated }: Props) {
   };
 
   const status = order.status;
-
-  const allowedMap: Record<OrderStatus, ActionStatus[]> = {
-    pending: ["processing", "cancelled"],
-    paid: ["processing", "cancelled"],
-    awaiting_payment: ["cancelled"],
-    pending_verification: ["cancelled"],
-    processing: ["shipped", "cancelled"],
-    shipped: ["delivered", "cancelled"],
-    delivered: ["completed"],
-    completed: ["refunded"],
-    refunded: [],
-    failed: [],
-    cancelled: [],
-  };
+const allowedMap: Record<OrderStatus, ActionStatus[]> = {
+  pending: ["processing", "cancelled"],
+  pending_verification: ["cancelled"],
+  awaiting_payment: ["cancelled"],
+  paid: ["processing", "cancelled"],
+  processing: ["shipped", "cancelled"],
+  shipped: ["delivered", "cancelled"],
+  delivered: ["completed"],
+  completed: ["refunded"],
+  delivery_failed: [],
+  returned: ["refunded"],
+  refunded: [],
+  failed: [],
+  cancelled: [],
+};
 
   const actions = allowedMap[status] || [];
 

@@ -9,6 +9,8 @@ export type OrderStatus =
   | "shipped"
   | "delivered"
   | "completed"
+  | "delivery_failed"
+  | "returned"
   | "refunded"
   | "failed"
   | "cancelled";
@@ -26,7 +28,9 @@ export type CourierShipmentStatus =
   | "assigned_to_courier"
   | "picked_up"
   | "in_transit"
+  | "out_for_delivery"
   | "delivered"
+  | "delivery_failed"
   | "returned"
   | "cancelled";
 
