@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<g id="BACKGROUND">
+	<rect style="fill:#FFEBDE;" width="500" height="500"/>
+</g>
+<g id="OBJECTS">
+	<g>
+		<path style="fill:#D18935;" d="M164.619,258.078l10.819,3.598l-8.393-7.717c0.693-1.556,1.203-3.21,1.503-4.938l16.943-3.633
+			l-16.943-3.633c-0.3-1.727-0.81-3.382-1.503-4.938l8.393-7.717l-10.819,3.598c-1.183-1.567-2.579-2.963-4.146-4.146l3.598-10.819
+			l-7.717,8.393c-1.556-0.693-3.211-1.203-4.938-1.503l-3.633-16.943l-3.633,16.943c-1.727,0.3-3.382,0.81-4.938,1.503l-7.717-8.393
+			l3.598,10.819c-1.567,1.183-2.963,2.579-4.146,4.146l-10.819-3.598l8.393,7.717c-0.693,1.556-1.203,3.211-1.503,4.938
+			l-16.943,3.633l16.943,3.633c0.3,1.728,0.81,3.382,1.503,4.938l-8.393,7.717l10.819-3.598c1.183,1.567,2.579,2.963,4.146,4.146
+			l-3.598,10.819l7.717-8.393c1.556,0.693,3.211,1.203,4.938,1.503l3.633,16.943l3.633-16.943c1.728-0.3,3.382-0.81,4.938-1.503
+			l7.717,8.393l-3.598-10.819C162.039,261.042,163.436,259.645,164.619,258.078z"/>
+		
+			<ellipse transform="matrix(0.1591 -0.9873 0.9873 0.1591 -117.9965 352.2379)" style="fill:#AA5342;" cx="147.783" cy="245.389" rx="21.083" ry="21.083"/>
+	</g>
+	<g>
+		<path style="fill:#F2AF97;" d="M99.951,310.385c0,0,7.864-16.776,8.301-17.346c0.437-0.57,10.922-6.461,11.577-6.841
+			c0.655-0.38,7.208-12.922,8.301-14.062c1.092-1.14,5.024-3.23,5.679-3.611c0.655-0.38,5.243-10.832,5.679-11.402
+			c0.437-0.57,4.594-4.941,4.594-4.941l6.765-9.882l7.427,7.981l4.713-6.075l8.074-4.749l4.528-5.615l8.486-3.785l7.029-9.538
+			l13.479,4.299l2.84,5.891l4.484,4.371v75.305H99.951z"/>
+		<g>
+			<g>
+				<polyline style="fill:none;stroke:#6B877F;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
+					191.18,220.867 195.526,236.566 193.432,251.283 181.836,254.504 175.393,271.094 144.791,277.214 144.791,285.59 
+					138.187,293.321 135.771,300.73 				"/>
+				<polyline style="fill:none;stroke:#6B877F;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
+					144.791,277.214 154.938,266.599 154.938,257.403 158.274,250.282 				"/>
+				<polyline style="fill:none;stroke:#6B877F;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
+					150.68,243.068 147.69,257.242 140.442,262.557 134.16,281.241 123.852,286.907 124.819,294.77 119.181,298.958 				"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<path style="fill:none;stroke:#6B877F;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M211.907,226.383
+			v-49.828c-18.149,0-35.078,3.26-50.361,9.213"/>
+		<path style="fill:none;stroke:#6B877F;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M87.566,262.239
+			c-5.359,14.903-8.234,31.125-8.234,48.146h17.446"/>
+	</g>
+</g>
+<g id="TEXTS">
+	<g>
+		<path id="SVGID_x5F_1_x5F_" style="fill:none;" d="M211.907,310.385H82.504c0-72.785,53.874-130.628,129.402-130.628V310.385z"/>
+		<text>		<textPath  xlink:href="#SVGID_x5F_1_x5F_" startOffset="47.2655%">
+<tspan  style="fill:#F2AF97; font-family:'Montserrat-Regular'; font-size:13px;">Lorem ipsum </tspan>		</textPath>
+</text>
+	</g>
+	<g>
+		<g>
+			<g>
+				
+					<text transform="matrix(1 0 0 1 217.7741 311.2191)" style="fill:#AA5342; font-family:'AbrilFatface-Regular'; font-size:48px;">Boutique</text>
+			</g>
+			<g>
+				
+					<text transform="matrix(1 0 0 1 217.7741 263.3846)" style="fill:#AA5342; font-family:'AbrilFatface-Regular'; font-size:48px;">Stellar</text>
+			</g>
+		</g>
+		<g>
+			
+				<text transform="matrix(1 0 0 1 217.7741 215.6128)" style="fill:#D18935; font-family:'AbrilFatface-Regular'; font-size:48px;">The</text>
+		</g>
+	</g>
+</g>
+</svg>
