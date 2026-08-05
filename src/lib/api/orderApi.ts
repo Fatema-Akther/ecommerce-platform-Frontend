@@ -15,19 +15,24 @@ export const OrderAPI = {
     apiFetch<Order[]>("/orders/my", { auth: true }),  // Add this function to fetch user's orders
 
 
-  updateOrderStatus: (
-    orderId: string,
-    status: Extract<
-      OrderStatus,
-      "processing" | "shipped" | "delivered" | "completed" | "cancelled"| "refunded"
-    >,
-    note?: string
-  ) =>
-    apiFetch<Order>(`/orders/${orderId}/status`, {
-      method: "POST",
-      body: { status, note },
-      auth: true,
-    }),
+updateOrderStatus: (
+  orderId: string,
+  status: Extract<
+    OrderStatus,
+    | "processing"
+    | "shipped"
+    | "delivered"
+    | "completed"
+    | "cancelled"
+    | "refunded"
+  >,
+  note?: string,
+) =>
+  apiFetch<Order>(`/orders/admin/${orderId}/status`, {
+    method: "POST",
+    body: { status, note },
+    auth: true,
+  }),
 
 
      // ✅ Add this
