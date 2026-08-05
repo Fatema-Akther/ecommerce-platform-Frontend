@@ -69,13 +69,22 @@ const allowedMap: Record<OrderStatus, ActionStatus[]> = {
   delivered: ["completed"],
   completed: ["refunded"],
   delivery_failed: [],
-  returned: ["refunded"],
+  returned: [],
   refunded: [],
   failed: [],
   cancelled: [],
 };
 
-  const actions = allowedMap[status] || [];
+let actions = allowedMap[status] || [];
+
+if (
+  status === "returned" &&
+  order.paymentMethod === "stripe"
+) {
+  actions = ["refunded"];
+}
+
+
 
   if (actions.length === 0) return null;
 
