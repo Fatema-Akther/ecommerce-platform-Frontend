@@ -75,10 +75,12 @@ const [state, setState] = useState("");
 const [postalCode, setPostalCode] = useState("");
 const [country, setCountry] = useState("US");
   const [note, setNote] = useState("");
-  const [paymentMethod, setPaymentMethod] =
-useState<"cod" | "stripe">("stripe");
 
+//   const [paymentMethod, setPaymentMethod] =
+// useState<"cod" | "stripe">("stripe");
 
+const [paymentMethod, setPaymentMethod] =
+  useState<"cod" | "stripe">("cod");
   
   const [placing, setPlacing] = useState(false);
   const [orderSuccess, setOrderSuccess] = useState(false);
@@ -277,6 +279,8 @@ if (response?.parcels) {
 };
 
   const handlePlaceOrder = async () => {
+
+    
 
     if (!selectedShippingRate) {
   toast.error("Please select shipping method");
@@ -905,7 +909,7 @@ ${rate.amount}
 
 
 
-                  <label className="flex items-center gap-2 rounded-lg border border-gray-300 dark:border-gray-700 px-4 py-3 cursor-pointer">
+                  {/* <label className="flex items-center gap-2 rounded-lg border border-gray-300 dark:border-gray-700 px-4 py-3 cursor-pointer">
   <input
     type="radio"
     name="paymentMethod"
@@ -917,6 +921,23 @@ ${rate.amount}
 
   <span className="text-sm text-gray-900 dark:text-white">
     Card Payment — Stripe
+  </span>
+</label> */}
+
+<label className="flex items-center gap-2 rounded-lg border border-gray-300 dark:border-gray-700 px-4 py-3 cursor-not-allowed opacity-50">
+  <input
+    type="radio"
+    name="paymentMethod"
+    checked={false}
+    disabled
+  />
+
+  <span className="text-sm text-gray-900 dark:text-white">
+    Card Payment — Stripe
+  </span>
+
+  <span className="ml-auto text-xs font-medium text-red-600">
+    Unavailable
   </span>
 </label>
                 </div>
