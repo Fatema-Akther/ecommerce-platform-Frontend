@@ -417,7 +417,7 @@ export default function AdminDashboard() {
       </div>
 
       {/* ── bKash Review ── */}
-      <SectionLabel>Manual bKash Review</SectionLabel>
+      {/* <SectionLabel>Manual bKash Review</SectionLabel>
       <div className="mt-3 rounded-2xl border bg-white dark:bg-gray-800 p-4 shadow-sm sm:mt-6 sm:p-6">
         <div className="mb-4 flex items-center gap-3">
           <div className="rounded-xl bg-pink-50 p-2.5 text-pink-600 sm:p-3">
@@ -433,7 +433,7 @@ export default function AdminDashboard() {
           </div>
         </div>
        
-      </div>
+      </div> */}
 
     </div>
   );
