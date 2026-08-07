@@ -83,7 +83,7 @@ This frontend communicates with a production-ready NestJS backend and provides r
 
 ### Home Page
 
-![Home](docs/screenshots/home.png)
+![Home Page](./docs/screenshots/home.png)
 
 ### Product Details
 
@@ -97,9 +97,6 @@ This frontend communicates with a production-ready NestJS backend and provides r
 
 ![Checkout](docs/screenshots/checkout.png)
 
-### Login
-
-![Login](docs/screenshots/login.png)
 
 ### Admin Dashboard
 
