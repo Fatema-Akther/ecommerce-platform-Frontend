@@ -115,9 +115,9 @@ function CartItemComponent({
         ) : null}
 
        <div className="mt-2">
-  <span className="block text-sm font-medium text-gray-900 dark:text-white">
-   {formatCurrency(item.price)}
-  </span>
+ <span className="block text-sm font-medium text-gray-900 dark:text-white">
+  {formatCurrency(item.price, item.currency)}
+</span>
 
   <div className="mt-2 flex justify-center">
     <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
@@ -404,10 +404,16 @@ const handleQty = useCallback(
 
       <Sheet isOpen={localIsOpen || isOpen}>
         <SheetContent className="p-0">
-          <div
+          {/* <div
             ref={wrapperRef}
             className="flex flex-col h-screen sm:max-w-md bg-white dark:bg-gray-900 overflow-hidden"
-          >
+          > */}
+
+
+<div
+ ref={wrapperRef}
+ className="relative flex h-screen w-full flex-col bg-white dark:bg-gray-900 overflow-hidden"
+>
             <div className="relative px-4 sm:px-6 py-4 sm:py-6 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border-b border-gray-200/50 dark:border-gray-700/50">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -438,7 +444,7 @@ const handleQty = useCallback(
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-1 md:p-2 space-y-3 sm:space-y-4 mb-48 no-scrollbar">
+         <div className="flex-1 overflow-y-auto p-1 md:p-2 space-y-3 sm:space-y-4 pb-40 no-scrollbar">
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full gap-6 p-6 sm:p-8">
                   <div className="relative">
@@ -501,9 +507,8 @@ const handleQty = useCallback(
               )}
             </div>
 
-            {items.length > 0 && (
-              <div className="border-t border-gray-200/50 dark:border-gray-700/50 bg-gradient-to-t from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50">
-                <SheetFooter className="p-2 sm:p-2 space-y-2">
+        {items.length > 0 && (
+  <SheetFooter className="p-2 sm:p-2 space-y-2">
                   <div className="space-y-3 p-3 sm:p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border border-gray-200/50 dark:border-gray-700/50">
                     <div className="flex justify-between text-sm font-medium text-gray-800 dark:text-gray-200">
                       <span>Subtotal</span>
@@ -565,7 +570,7 @@ const handleQty = useCallback(
 
                  
                 </SheetFooter>
-              </div>
+              
             )}
           </div>
         </SheetContent>
@@ -573,3 +578,15 @@ const handleQty = useCallback(
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+

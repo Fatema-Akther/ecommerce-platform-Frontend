@@ -89,21 +89,21 @@ const Sheet: React.FC<SheetProps> = ({
   }, [isOpen, onClose, disableEscapeKey]);
 
   // Handle click outside
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (!disableClickOutside && sheetRef.current && !sheetRef.current.contains(e.target as Node)) {
-        onClose?.(); // Optional chaining ensures safe invocation
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (e: MouseEvent) => {
+  //     if (!disableClickOutside && sheetRef.current && !sheetRef.current.contains(e.target as Node)) {
+  //       onClose?.(); // Optional chaining ensures safe invocation
+  //     }
+  //   };
 
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
+  //   if (isOpen) {
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //   }
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen, onClose, disableClickOutside]);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [isOpen, onClose, disableClickOutside]);
   // Handle click outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -160,15 +160,17 @@ const Sheet: React.FC<SheetProps> = ({
             role='dialog'
             aria-modal='true'
             aria-labelledby={title ? "sheet-title" : undefined}
-            className={twMerge(
-              "fixed z-[10000] bg-white dark:bg-gray-800 w-fit",
-              position === "left" || position === "right" ? "h-svh" : "w-full",
-              positionClasses[position],
-              className
-            )}
+           className={twMerge(
+  "fixed z-[10000] bg-white dark:bg-gray-800 w-[300px] max-w-full",
+  position === "left" || position === "right"
+    ? "h-svh"
+    : "w-full",
+  positionClasses[position],
+  className
+)}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className='w-full'>
+          <div className="flex h-full w-full flex-col">
               {showHeader && (
                 <SheetHeader
                   onClose={onClose}
@@ -246,8 +248,21 @@ interface SheetContentProps {
   className?: string;
 }
 
+// const SheetContent = ({ children, className = "" }: SheetContentProps) => {
+//   return <div className={twMerge(" flex-1 overflow-y-aut scrollbar-thin", className)}>{children}</div>;
+// };
+
 const SheetContent = ({ children, className = "" }: SheetContentProps) => {
-  return <div className={twMerge(" flex-1 overflow-y-aut scrollbar-thin", className)}>{children}</div>;
+  return (
+    <div
+      className={twMerge(
+        "relative flex-1 w-full overflow-hidden",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
 };
 
 interface SheetFooterProps {
@@ -259,7 +274,7 @@ const SheetFooter = ({ children, className = "" }: SheetFooterProps) => {
   return (
     <footer
       className={twMerge(
-        "absolute bottom-0 w-full border-t p-0 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50",
+        "absolute bottom-0 left-0 z-20 w-full border-t p-0 bg-gray-50 dark:border-gray-700 dark:bg-gray-700/50",
         className
       )}
     >
@@ -269,3 +284,11 @@ const SheetFooter = ({ children, className = "" }: SheetFooterProps) => {
 };
 
 export { Sheet, SheetContent, SheetFooter, SheetHeader };
+
+
+
+
+
+
+
+
