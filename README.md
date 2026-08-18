@@ -156,7 +156,7 @@ src
 # ⚙️ Installation
 
 ```bash
-git clone https://github.com/Fatema-Akther/ecommerce-platform-Frontend
+git clone https://github.com/Fatema-Akther/ecommerce-platform-Frontend.git
 
 cd ecommerce-platform-Frontend
 
