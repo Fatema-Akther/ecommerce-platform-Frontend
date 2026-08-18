@@ -156,9 +156,9 @@ src
 # ⚙️ Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Fatema-Akther/ecommerce-platform-Frontend
 
-cd ecommerce-frontend
+cd ecommerce-platform-Frontend
 
 npm install
 
