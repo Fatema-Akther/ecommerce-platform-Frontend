@@ -753,18 +753,6 @@ if (
                 />
               </div>
 
-              <div>
-                <label className="block text-sm mb-1 text-gray-700 dark:text-gray-300">
-                  Note (Optional)
-                </label>
-                <textarea
-                  rows={3}
-                  value={note}
-                  onChange={(e) => setNote(e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 text-sm text-gray-900 dark:text-white outline-none"
-                  placeholder="Any delivery note?"
-                />
-              </div>
 
 
 <div className="mt-5">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { DashboardSummary } from "@/lib/api/admin_dashboardApi";
 import { formatCurrency } from "@/utils/formatCurrency";
+import { FiPackage } from "react-icons/fi";
 
 type Props = {
   orders: DashboardSummary["recentOrders"];
@@ -40,9 +41,23 @@ export default function TodayRecentOrdersCard({ orders }: Props) {
       </div>
 
       {safeOrders.length === 0 ? (
-        <div className="rounded-xl border border-dashed p-6 text-sm text-gray-500">
-          No recent orders found.
-        </div>
+       <div className="rounded-xl border border-dashed p-6 text-sm text-gray-500">
+  <div className="flex flex-col items-center justify-center py-4">
+    
+    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-purple-100">
+      <FiPackage className="text-purple-600" size={22} />
+    </div>
+
+    <p className="font-medium text-gray-700">
+      No recent orders found.
+    </p>
+
+    <p className="mt-1 text-xs text-gray-400">
+      Orders placed today will appear here.
+    </p>
+
+  </div>
+</div>
       ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm">

@@ -37,6 +37,8 @@ export default function BusinessSettingsForm() {
   const [existingBanners, setExistingBanners] = useState<string[]>([]);
 const [heroFiles, setHeroFiles] = useState<File[]>([]);
 
+const [heroPreviews, setHeroPreviews] = useState<string[]>([]);
+
 
 useEffect(() => {
   if (!businessData) return;
@@ -153,6 +155,11 @@ if (!response.ok) {
       await refetch();
       setLogoFile(null);
 
+      setHeroFiles([]);
+
+heroPreviews.forEach((url) => URL.revokeObjectURL(url));
+setHeroPreviews([]);
+
       alert("Business settings updated successfully.");
     } catch (error) {
   console.error(error);
@@ -247,23 +254,98 @@ if (!response.ok) {
   </div>
 
   {/* 👇 THEN KEEP YOUR INPUT BELOW */}
-  <input
-    type="file"
-    multiple
-    accept="image/png,image/jpeg,image/jpg,image/webp"
-    onChange={(e) => {
-      const files = Array.from(e.target.files || []);
+<input
+  type="file"
+  multiple
+  accept="image/png,image/jpeg,image/jpg,image/webp"
+  onChange={(e) => {
+    const files = Array.from(e.target.files || []);
 
-       // ❌ BLOCK HERE
-  if (existingBanners.length + files.length > 5) {
-    alert("Maximum 5 banners allowed");
-    return;
-  }
+    // existing saved + already selected + newly selected
+    const total =
+      existingBanners.length +
+      heroFiles.length +
+      files.length;
 
-      setHeroFiles(files);
-    }}
-    className="block text-sm text-gray-700 dark:text-gray-200"
-  />
+    if (total > 5) {
+      alert("Maximum 5 banners allowed");
+      e.target.value = "";
+      return;
+    }
+
+    const newPreviews = files.map((file) =>
+      URL.createObjectURL(file)
+    );
+
+    // ✅ আগের files রেখে নতুনগুলো add হবে
+    setHeroFiles((prev) => [
+      ...prev,
+      ...files,
+    ]);
+
+    // ✅ আগের previews রেখে নতুনগুলো add হবে
+    setHeroPreviews((prev) => [
+      ...prev,
+      ...newPreviews,
+    ]);
+
+    // একই input থেকে পরে আবার file select করতে সুবিধা হবে
+    e.target.value = "";
+  }}
+  className="block text-sm text-gray-700 dark:text-gray-200"
+/>
+
+
+
+{heroPreviews.length > 0 && (
+  <div className="mt-4">
+    <p className="mb-2 text-sm font-medium text-gray-700 dark:text-gray-200">
+      Selected Banners ({heroPreviews.length})
+    </p>
+
+    <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+      {heroPreviews.map((preview, index) => (
+        <div
+          key={preview}
+          className="relative overflow-hidden rounded-lg border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800"
+        >
+          <img
+            src={preview}
+            alt={`Selected banner ${index + 1}`}
+            className="h-28 w-full object-cover"
+          />
+
+          {/* DELETE BUTTON */}
+          <button
+            type="button"
+            onClick={() => {
+              // preview URL cleanup
+              URL.revokeObjectURL(preview);
+
+              // remove preview
+              setHeroPreviews((prev) =>
+                prev.filter((_, i) => i !== index)
+              );
+
+              // remove corresponding file
+              setHeroFiles((prev) =>
+                prev.filter((_, i) => i !== index)
+              );
+            }}
+            className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full bg-red-600 text-sm font-bold text-white shadow hover:bg-red-700"
+            aria-label="Remove banner"
+          >
+            ×
+          </button>
+
+          <div className="truncate px-2 py-2 text-xs text-gray-600 dark:text-gray-300">
+            {heroFiles[index]?.name}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
   <p className="mt-2 text-xs text-gray-500">
     You can upload multiple banners (max 5)
