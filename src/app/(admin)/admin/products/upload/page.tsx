@@ -618,6 +618,8 @@ placeholder="Optional"
 onChange={(e)=>
 updateForm("length",e.target.value)
 }
+
+className="w-full rounded-xl border px-4 py-3"
 />
 
 </div>
@@ -632,9 +634,11 @@ Width (cm)
 type="number"
 min="0"
 value={form.width}
+placeholder="Optional"
 onChange={(e)=>
 updateForm("width",e.target.value)
 }
+className="w-full rounded-xl border px-4 py-3"
 />
 
 </div>
@@ -649,9 +653,11 @@ Height (cm)
 type="number"
 min="0"
 value={form.height}
+placeholder="Optional"
 onChange={(e)=>
 updateForm("height",e.target.value)
 }
+className="w-full rounded-xl border px-4 py-3"
 />
 
 </div>
