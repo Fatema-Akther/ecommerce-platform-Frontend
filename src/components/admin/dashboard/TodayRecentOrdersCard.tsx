@@ -17,6 +17,42 @@ function formatStatus(status: string) {
   return status.replace(/_/g, " ");
 }
 
+
+function getStatusColor(status: string) {
+  switch (status) {
+    case "pending":
+    case "pending_verification":
+    case "awaiting_payment":
+      return "bg-yellow-100 text-yellow-700";
+
+    case "paid":
+    case "processing":
+      return "bg-blue-100 text-blue-700";
+
+    case "shipped":
+      return "bg-purple-100 text-purple-700";
+
+    case "delivered":
+    case "completed":
+      return "bg-green-100 text-green-700";
+
+    case "delivery_failed":
+    case "cancelled":
+    case "failed":
+      return "bg-red-100 text-red-700";
+
+    case "returned":
+    case "refunded":
+      return "bg-orange-100 text-orange-700";
+
+    default:
+      return "bg-gray-100 text-gray-700";
+  }
+}
+
+
+
+
 export default function TodayRecentOrdersCard({ orders }: Props) {
   const safeOrders = orders || [];
 
@@ -103,9 +139,11 @@ export default function TodayRecentOrdersCard({ orders }: Props) {
                   </td>
 
                   <td className="px-3 py-3">
-                    <span className="rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">
-                      {formatStatus(order.status)}
-                    </span>
+                    <span
+  className={`rounded-md px-2 py-1 text-xs font-medium ${getStatusColor(order.status)}`}
+>
+  {formatStatus(order.status)}
+</span>
                   </td>
                 </tr>
               ))}
