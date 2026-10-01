@@ -37,8 +37,20 @@ export default function HomeLayout({ children }: Props) {
       response?.items ?? [],
   });
 
-  if (isLoading) return <div>Loading products...</div>;
+
+  if (isLoading) return <div className="flex min-h-screen flex-col items-center justify-center bg-[#07111d] text-white">
+  <div className="h-10 w-10 animate-spin rounded-full border-4 border-cyan-400/30 border-t-cyan-400"></div>
+
+  <p className="mt-6 text-sm text-slate-300">
+    Starting the application...
+  </p>
+       
+  <p className="mt-2 text-xs text-slate-500">
+    This may take a few seconds on the first visit.
+  </p>
+</div>
   if (isError) return <div>Error fetching products: {error.message}</div>;
+
 
   return (
     <div className="w-full bg-[#FAF7F2] dark:bg-[#1C1A17]">
@@ -60,7 +72,7 @@ export default function HomeLayout({ children }: Props) {
 />
 
 
-    
+  
       {children}
     </div>
   );
